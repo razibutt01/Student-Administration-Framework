@@ -6,12 +6,12 @@ import useFetch from "./useFetch";
 
 const Body = ({ getTarget }) => {
   const { data, isPending, error } = useFetch("http://localhost:5000/Students");
-  const [students, setStudents] = useState();
+  const [students, setStudents] = useState([]);
   const [searchterm, setTerm] = useState("");
   const [searchResults, setResults] = useState([]);
-  const [filtered, setFiltered] = useState();
-  const [fil, setFil] = useState();
-  const [check, setCheck] = useState(false);
+  const [filtered, setFiltered] = useState([]);
+  const [fil, setFil] = useState([]);
+  // const [check, setCheck] = useState(false);
   const [status, setStatus] = useState(false);
   const searchHandler = (searchterm) => {
     setTerm(searchterm);
@@ -27,33 +27,60 @@ const Body = ({ getTarget }) => {
       setResults(students);
     }
   };
-  // const advance = (filter) => {
-  //   if (filter != "") {
-  //     setObb(filter);
-  //   } else {
-  //     setObb(students);
-  //   }
-  // };
-  const handleFilter = (fil, check) => {
-    setFil(fil);
-    setCheck(check);
-    if (fil != "" && check == true) {
-      setStatus(true);
-      const newstu = students.filter((student) => {
-        for (let index = 0; index < student.groups.length; index++) {
-          if (student.groups[index] == fil) {
-            return student.groups[index];
-          }
-        }
-      });
-      setFiltered(newstu);
-    } else {
-      setStatus(false);
-      setFiltered(students);
-    }
 
-    // advance(filtered);
+  useEffect(() => {
+    const filteredStudents = students.filter((student) =>
+      student.groups.find((group) => {
+        if (fil.includes(group)) {
+          return true;
+        }
+        return false;
+      })
+    );
+    setFiltered(filteredStudents);
+  }, [fil]);
+
+  const handleFilter = (fill, check) => {
+    const current = fil.indexOf(fill);
+    const newfill = [...fil];
+    if (current === -1) {
+      newfill.push(fill);
+    } else {
+      newfill.splice(current, 1);
+    }
+    setFil(newfill);
+
+    // const newstu = students.filter(function (item) {
+    //   for (var key in fil) {
+    //     if (fil[key] != "") {
+    //       if (item.groups[key] === undefined || item.groups[key] != fil[key])
+    //         return false;
+    //     }
+    //   }
+
+    //   return true;
+    // });
+
+    // for (let i = 0; i < fil.length; i++) {
+    //   if (fil[i] != "") {
+    //     setStatus(true);
+    //     const newstu = students.filter((student) => {
+    //       for (let index = 0; index < student.groups.length; index++) {
+    //         if (student.groups[index] == fil[i]) {
+    //           return student.groups[index];
+    //         }
+    //       }
+    //     });
+    //     setFiltered(newstu);
+    //   } else {
+    //     setStatus(false);
+    //     // setFiltered(students);
+    //   }
+    // }
   };
+  console.log(status);
+  console.log(filtered);
+  console.log(fil);
 
   useEffect(() => {
     if (data?.length) {
@@ -93,7 +120,7 @@ const Body = ({ getTarget }) => {
           {students && (
             <Table
               tablestu={
-                status
+                fil.length > 0
                   ? filtered
                   : searchterm.length < 1
                   ? students

@@ -1,11 +1,6 @@
 import { useEffect } from "react";
 
 const Side = ({ sidestu, setSidestu, filter, setFilter, getfilter }) => {
-  useEffect(() => {
-    if (sidestu?.length) {
-      setFilter(sidestu);
-    }
-  }, [sidestu]);
   const handleChange = (e) => {
     getfilter(e.target.value, e.target.checked);
   };
