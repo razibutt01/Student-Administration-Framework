@@ -1,8 +1,9 @@
 .App {
   text-align: center;
+
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +36,237 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+* {
+  max-width: 900px;
+  margin: 10px auto;
+
+
+}
+
+.Top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-items: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  /* border: 1px solid lightgray; */
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+}
+
+#root>div>div>div>div.Body-content>div.Table>div>table>tbody>tr>td>a>button {
+
+  margin-bottom: 3px;
+  margin-right: 10px;
+}
+
+#root>div>div>div>div.Body-content>div.Table>div>table>tbody>tr>td>a {
+  text-decoration-line: none;
+}
+
+td,
+th {
+  border-bottom: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#root>div>div>div>div.Body-content>div>div>table>tbody>tr>td>button:nth-child(1) {
+
+  margin-bottom: 5px;
+
+
+}
+
+
+
+.Body {
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  min-height: 560px;
+
+
+
+}
+
+.Body-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+
+
+}
+
+.side label {
+  margin: 4px 50px;
+  align-self: flex-start;
+  align-items: center;
+
+}
+
+.side label input {
+  margin-right: 5px;
+}
+
+.Side {
+  max-width: 250px;
+
+
+}
+
+.Search {
+
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+
+
+}
+
+
+
+#root>div>div>div>div>div>div.Search>label {
+  margin: 0;
+  padding: 0;
+}
+
+.Students {
+  display: flex;
+  flex-direction: row;
+
+
+}
+
+#root>div>div>div>div>div>div.Students>h5 {
+  margin-right: 15px;
+  align-self: center;
+}
+
+#root>div>div>div>div>div>div.Students>a {
+  text-decoration-line: none;
+
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+}
+
+.Create {
+  border: 1px solid #dddddd;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  padding: 0;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+
+}
+
+form div label {
+  align-self: flex-start;
+  padding: 0;
+  margin: 0;
+}
+
+#root>div>div>div>form>div:nth-child(5)>div>label {
+  align-self: flex-start;
+  margin: 0;
+  padding: 0;
+}
+
+#root>div>div>div>form>div:nth-child(4)>label:nth-child(2)>div {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#root>div>div>div>form>div:nth-child(5)>div {
+  display: flex;
+  flex-direction: column;
+
+}
+
+#root>div>div>div>form>div:nth-child(5)>div label {
+  margin: 3px;
+  margin-left: 20px;
+
+
+}
+
+#root>div>div>div>form>div:nth-child(5)>div label input {
+  margin-right: 5px;
+
+}
+
+#root>div>div>div>form>div:nth-child(4)>label:nth-child(2)>div label input {
+  margin-right: 5px;
+}
+
+#root>div>div>div>form>div:nth-child(4)>label:nth-child(2)>div label {
+  margin-left: 20px;
+
+}
+
+
+
+form label {
+  margin-bottom: 10px;
+
+
+}
+
+form label input {
+  margin-left: 5px;
+
+}
+
+#root>div>div>div>form>div>label>input[type=text] {
+  align-self: center;
+
+}
+
+#root>div>div>div>form>div:nth-child(1)>label>input[type=text] {
+  margin-left: 55px;
+}
+
+#root>div>div>div>button {
+  margin: 10px auto;
+  width: 20px;
 }

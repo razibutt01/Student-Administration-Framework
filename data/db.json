@@ -1,0 +1,46 @@
+{
+  "Students": [
+    {
+      "name": "Razi-ul-Hassan Butt",
+      "id": 1,
+      "sex": "Male",
+      "Date_of_Birth": "2001-05-06",
+      "Place_of_Birth": "Pakistan",
+      "groups": [
+        "Chemistry",
+        "Physics"
+      ]
+    },
+    {
+      "name": "Fasih-ul-Hassan Butt",
+      "id": 2,
+      "sex": "Male",
+      "Date_of_Birth": "2005-05-06",
+      "Place_of_Birth": "Pakistan",
+      "groups": [
+        "Chemistry"
+      ]
+    },
+    {
+      "name": "asdfasdfdf",
+      "sex": "Male",
+      "Date_of_Birth": "2022-07-18",
+      "Place_of_Birth": "sfdasd",
+      "groups": [
+        "Physics"
+      ],
+      "id": 3
+    },
+    {
+      "name": "dsdfds",
+      "sex": "Female",
+      "Date_of_Birth": "2022-07-11",
+      "Place_of_Birth": "dfdsf",
+      "groups": [
+        "Chemistry",
+        "Computer"
+      ],
+      "id": 4
+    }
+  ]
+}
