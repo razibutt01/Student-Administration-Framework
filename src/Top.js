@@ -2,8 +2,19 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { useRef } from "react";
-const Top = ({ topstudents, term, searchkeyword }) => {
+const Top = ({
+  topstudents,
+  term,
+  searchkeyword,
+  postperpage,
+  totalposts,
+  handlepaginate,
+}) => {
+  const pagenumbers = [];
   const inputEl = useRef("");
+  for (let i = 1; i <= Math.ceil(totalposts / postperpage); i++) {
+    pagenumbers.push(i);
+  }
   const handlechange = () => {
     searchkeyword(inputEl.current.value);
   };
@@ -30,9 +41,11 @@ const Top = ({ topstudents, term, searchkeyword }) => {
       </div>
       <div className="group">
         <ButtonGroup variant="contained" color="primary" size="small">
-          <Button>1</Button>
-          <Button>2</Button>
-          <Button>3</Button>
+          {pagenumbers.map((numbers) => (
+            // <div className="buttongroups" key={numbers}>
+            <Button onClick={() => handlepaginate(numbers)}>{numbers}</Button>
+            // </div>
+          ))}
         </ButtonGroup>
       </div>
     </div>

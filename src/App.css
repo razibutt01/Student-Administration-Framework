@@ -62,7 +62,9 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-  max-width: 600px;
+
+
+
 }
 
 #root>div>div>div>div.Body-content>div.Table>div>table>tbody>tr>td>a>button {
@@ -138,6 +140,12 @@ th {
   max-width: 250px;
 
 
+}
+
+Table {
+  box-sizing: border-box;
+  max-width: 650px;
+  width: 100%;
 }
 
 .Search {
@@ -269,4 +277,94 @@ form label input {
 #root>div>div>div>button {
   margin: 10px auto;
   width: 20px;
+}
+
+span {
+  color: red;
+  font-size: small;
+  margin-top: 0;
+
+}
+
+.Side {
+  margin-top: 15px;
+
+}
+
+@media screen and (max-width:870px) {
+  #root>div>div>div>div.Body-content>div.Table {
+    max-width: 550px;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+
+  }
+
+  table {
+    max-width: 550px;
+    flex-wrap: wrap;
+  }
+
+  .Side {
+    max-width: 200px;
+    margin-left: 0;
+    margin-right: 0;
+
+
+  }
+
+  Body {
+    max-width: 750px;
+  }
+
+  .Body-content {
+    max-width: 750px;
+  }
+
+  .content {
+    max-width: 870px;
+  }
+
+}
+
+@media screen and (max-width:740px) {
+  #root>div>div>div>div.Body-content>div.Side {
+    order: 0;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  #root>div>div>div>div.Body-content>div.Table {
+    order: -1;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  .Body-content {
+    max-width: 740px;
+  }
+}
+
+@media screen and (max-width:530px) {
+  #root>div>div>div>div.Body-content>div.Side {
+    order: 0;
+    max-width: 5300px;
+    margin: 0 auto;
+  }
+
+  #root>div>div>div>div.Body-content>div.Table {
+    order: -1;
+    max-width: 530px;
+    margin: 0 auto;
+  }
+
+  .Body-content {
+    max-width: 530px;
+  }
+
+  .Body {
+    max-width: 540px;
+    width: fit-content;
+  }
 }

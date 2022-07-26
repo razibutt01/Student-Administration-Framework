@@ -1,5 +1,5 @@
 import Side from "./Side";
-import Table from "./Table";
+import Tables from "./Tables";
 import Top from "./Top";
 import { useState, useEffect } from "react";
 import useFetch from "./useFetch";
@@ -11,8 +11,19 @@ const Body = ({ getTarget }) => {
   const [searchResults, setResults] = useState([]);
   const [filtered, setFiltered] = useState([]);
   const [fil, setFil] = useState([]);
+  const [currentpage, setCurrentpage] = useState(1);
+  const [postperpage, setPostperpage] = useState(10);
+
   // const [check, setCheck] = useState(false);
   const [status, setStatus] = useState(false);
+
+  const indexOfLastpost = currentpage * postperpage;
+  const indexOfFirstpost = indexOfLastpost - postperpage;
+  const currentPosts = students.slice(indexOfFirstpost, indexOfLastpost);
+
+  const Pagination = (pagenumber) => {
+    setCurrentpage(pagenumber);
+  };
   const searchHandler = (searchterm) => {
     setTerm(searchterm);
     if (searchterm !== "") {
@@ -49,38 +60,10 @@ const Body = ({ getTarget }) => {
       newfill.splice(current, 1);
     }
     setFil(newfill);
-
-    // const newstu = students.filter(function (item) {
-    //   for (var key in fil) {
-    //     if (fil[key] != "") {
-    //       if (item.groups[key] === undefined || item.groups[key] != fil[key])
-    //         return false;
-    //     }
-    //   }
-
-    //   return true;
-    // });
-
-    // for (let i = 0; i < fil.length; i++) {
-    //   if (fil[i] != "") {
-    //     setStatus(true);
-    //     const newstu = students.filter((student) => {
-    //       for (let index = 0; index < student.groups.length; index++) {
-    //         if (student.groups[index] == fil[i]) {
-    //           return student.groups[index];
-    //         }
-    //       }
-    //     });
-    //     setFiltered(newstu);
-    //   } else {
-    //     setStatus(false);
-    //     // setFiltered(students);
-    //   }
-    // }
   };
-  console.log(status);
-  console.log(filtered);
-  console.log(fil);
+  // console.log(status);
+  // console.log(filtered);
+  // console.log(fil);
 
   useEffect(() => {
     if (data?.length) {
@@ -96,6 +79,9 @@ const Body = ({ getTarget }) => {
             topstudents={students}
             term={searchterm}
             searchkeyword={searchHandler}
+            postperpage={postperpage}
+            totalposts={students.length}
+            handlepaginate={Pagination}
           />
         )}
       </div>
@@ -118,12 +104,12 @@ const Body = ({ getTarget }) => {
           {isPending && <div>Loading...</div>}
 
           {students && (
-            <Table
+            <Tables
               tablestu={
                 fil.length > 0
                   ? filtered
                   : searchterm.length < 1
-                  ? students
+                  ? currentPosts
                   : searchResults
               }
               setTablestu={setStudents}

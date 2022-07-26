@@ -19,6 +19,30 @@ function App() {
       setAppstudents(data);
     }
   }, [data]);
+
+  const updatedform = (id, updatedstudent) => {
+    fetch(`http://localhost:5000/Students/` + id, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(updatedstudent),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then(() => {
+        setAppstudents(
+          appstudents.map((student) =>
+            student.id == id ? updatedstudent : student
+          )
+        );
+      });
+
+    // console.log(id);
+    // console.log(updatedstudent);
+  };
+  // console.log(appstudents);
   return (
     <Router>
       <div className="App">
@@ -39,7 +63,7 @@ function App() {
             <Route path="/form">
               {error && <div>{error}</div>}
               {isPending && <div>Loading...</div>}
-              {appstudents && <Form formstu={view} />}
+              {appstudents && <Form formstu={view} updatedform={updatedform} />}
             </Route>
           </div>
         </Switch>

@@ -22,14 +22,14 @@
       ]
     },
     {
-      "name": "asdfasdfdf",
+      "name": "Waleed",
+      "id": 3,
       "sex": "Male",
       "Date_of_Birth": "2022-07-18",
       "Place_of_Birth": "sfdasd",
       "groups": [
         "Physics"
-      ],
-      "id": 3
+      ]
     },
     {
       "name": "dsdfds",
@@ -41,6 +41,87 @@
         "Computer"
       ],
       "id": 4
+    },
+    {
+      "name": "john",
+      "sex": "Male",
+      "Date_of_Birth": "2022-07-20",
+      "Place_of_Birth": "USA",
+      "groups": [
+        "Chemistry",
+        "Maths",
+        "Biology"
+      ],
+      "id": 5
+    },
+    {
+      "name": "Sabahat butt",
+      "sex": "Male",
+      "Date_of_Birth": "2022-07-23",
+      "Place_of_Birth": "South Africa",
+      "groups": [
+        "Computer",
+        "Physics"
+      ],
+      "id": 6
+    },
+    {
+      "name": "ghgjghj",
+      "sex": "Female",
+      "Date_of_Birth": "2022-07-08",
+      "Place_of_Birth": "hgjghj",
+      "groups": [
+        "Maths",
+        "Chemistry",
+        "Physics"
+      ],
+      "id": 7
+    },
+    {
+      "name": "ghjghjghjhgj",
+      "sex": "Male",
+      "Date_of_Birth": "2022-07-06",
+      "Place_of_Birth": "hgjhgjghjhgjgh",
+      "groups": [
+        "Chemistry",
+        "Maths"
+      ],
+      "id": 8
+    },
+    {
+      "name": "wrwerery",
+      "sex": "Male",
+      "Date_of_Birth": "2022-07-04",
+      "Place_of_Birth": "ewrgfhgfh",
+      "groups": [
+        "Chemistry",
+        "Maths",
+        "Physics"
+      ],
+      "id": 9
+    },
+    {
+      "name": "werwererrrtyr",
+      "sex": "Male",
+      "Date_of_Birth": "2022-07-09",
+      "Place_of_Birth": "erwerewrewrewr",
+      "groups": [
+        "Maths",
+        "Chemistry",
+        "Physics"
+      ],
+      "id": 10
+    },
+    {
+      "name": "retertrere",
+      "sex": "Female",
+      "Date_of_Birth": "2022-07-16",
+      "Place_of_Birth": "retert",
+      "groups": [
+        "Physics",
+        "Maths"
+      ],
+      "id": 11
     }
   ]
 }
