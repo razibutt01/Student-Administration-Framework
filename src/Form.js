@@ -1,18 +1,18 @@
 import { Button } from "@mui/material";
 import { useContext, useState } from "react";
 import { useHistory } from "react-router-dom";
-import App from "./App";
 
+import React from "react";
 const Form = ({ formstu, updatedform }) => {
   const history = useHistory();
 
   const id = formstu.id;
-  const [name, setName] = useState(formstu.name);
-  const [sex, setSex] = useState(formstu.sex);
-  const [groups, setGroups] = useState(formstu.groups);
-  const [Place_of_Birth, setPlace] = useState(formstu.Place_of_Birth);
-  const [Date_of_Birth, setBirth] = useState(formstu.Date_of_Birth);
-  // const { updatedform } = useContext(App);
+  const [name, setName] = React.useState(formstu.name);
+  const [sex, setSex] = React.useState(formstu.sex);
+  const [groups, setGroups] = React.useState(formstu.groups);
+  const [Place_of_Birth, setPlace] = React.useState(formstu.Place_of_Birth);
+  const [Date_of_Birth, setBirth] = React.useState(formstu.Date_of_Birth);
+
   const updatedstudent = {
     name,
     id,

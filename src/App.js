@@ -3,23 +3,29 @@ import useFetch from "./useFetch";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Body from "./Body";
 import Form from "./Form";
-
+import React from "react";
 import Create from "./Create";
-import { useEffect, useState } from "react";
 
 function App() {
   const { data, isPending, error } = useFetch("http://localhost:5000/Students");
-  const [appstudents, setAppstudents] = useState();
-  const [view, setView] = useState();
+  const [appstudents, setAppstudents] = React.useState();
+  const [view, setView] = React.useState();
   const handleTarget = (target) => {
     setView(target);
   };
-  useEffect(() => {
+
+  React.useEffect(() => {
     if (data?.length) {
       setAppstudents(data);
     }
   }, [data]);
-
+  const update = () => {
+    fetch("http://localhost:5000/Students").then((result) => {
+      result.json().then((resp) => {
+        setAppstudents(resp);
+      });
+    });
+  };
   const updatedform = (id, updatedstudent) => {
     fetch(`http://localhost:5000/Students/` + id, {
       method: "PUT",
@@ -34,15 +40,13 @@ function App() {
       .then(() => {
         setAppstudents(
           appstudents.map((student) =>
-            student.id == id ? updatedstudent : student
+            student.id === id ? updatedstudent : student
           )
         );
+        update();
       });
-
-    // console.log(id);
-    // console.log(updatedstudent);
   };
-  // console.log(appstudents);
+
   return (
     <Router>
       <div className="App">
@@ -60,10 +64,12 @@ function App() {
                 <Create createstu={appstudents} setCreatestu={setAppstudents} />
               )}
             </Route>
-            <Route path="/form">
+            <Route path="/edit/:id">
               {error && <div>{error}</div>}
               {isPending && <div>Loading...</div>}
-              {appstudents && <Form formstu={view} updatedform={updatedform} />}
+              {appstudents && (
+                <Create createstu={appstudents} setCreatestu={setAppstudents} />
+              )}
             </Route>
           </div>
         </Switch>

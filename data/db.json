@@ -1,28 +1,17 @@
 {
   "Students": [
     {
-      "name": "Razi-ul-Hassan Butt",
-      "id": 1,
-      "sex": "Male",
-      "Date_of_Birth": "2001-05-06",
-      "Place_of_Birth": "Pakistan",
-      "groups": [
-        "Chemistry",
-        "Physics"
-      ]
-    },
-    {
-      "name": "Fasih-ul-Hassan Butt",
-      "id": 2,
-      "sex": "Male",
+      "name": "Fasih-ul-Hassan butt",
+      "Place_of_Birth": "Pakistani",
       "Date_of_Birth": "2005-05-06",
-      "Place_of_Birth": "Pakistan",
+      "sex": "Male",
       "groups": [
-        "Chemistry"
-      ]
+        "Maths"
+      ],
+      "id": 2
     },
     {
-      "name": "Waleed",
+      "name": "Waleed butt",
       "id": 3,
       "sex": "Male",
       "Date_of_Birth": "2022-07-18",
@@ -43,7 +32,8 @@
       "id": 4
     },
     {
-      "name": "john",
+      "name": "john ",
+      "id": 5,
       "sex": "Male",
       "Date_of_Birth": "2022-07-20",
       "Place_of_Birth": "USA",
@@ -51,8 +41,7 @@
         "Chemistry",
         "Maths",
         "Biology"
-      ],
-      "id": 5
+      ]
     },
     {
       "name": "Sabahat butt",
@@ -113,15 +102,16 @@
       "id": 10
     },
     {
-      "name": "retertrere",
-      "sex": "Female",
-      "Date_of_Birth": "2022-07-16",
-      "Place_of_Birth": "retert",
+      "name": "abcd",
+      "sex": "Male",
+      "Date_of_Birth": "2022-07-12",
+      "Place_of_Birth": "Pakistan",
       "groups": [
-        "Physics",
-        "Maths"
+        "Chemistry",
+        "Maths",
+        "Physics"
       ],
-      "id": 11
+      "id": 12
     }
   ]
 }

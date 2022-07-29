@@ -3,6 +3,7 @@
 
 }
 
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -58,12 +59,20 @@
   /* border: 1px solid lightgray; */
 }
 
+.Top .Search input {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
-  width: 100%;
+  /* width: 100%; */
 
-
+  min-width: 650px;
 
 }
 
@@ -117,13 +126,99 @@ th {
 .side {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
   margin: 0;
   padding: 0;
 
 
 
 }
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(2) {
+  flex-direction: row;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+#male {
+  margin: 5px 10px;
+
+}
+
+.invalid-feedback {
+  color: red;
+  font-size: 13px;
+  margin: 5px;
+}
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+}
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(3)>div.fields>label>input[type=checkbox] {
+  margin-right: 5px;
+}
+
+
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(2)>div:nth-child(1) {
+  flex-direction: row;
+}
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(2)>div:nth-child(2) {
+  flex-direction: row;
+}
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(2)>div.invalid-feedback {
+  align-self: center;
+}
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(4)>div>label>input[type=checkbox] {
+  margin-right: 5px;
+}
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(4)>div {
+  margin-bottom: 10px;
+}
+
+#root>div>div>div>form>div:nth-child(4)>div:nth-child(3) {
+  flex-direction: row;
+  margin-bottom: 5px;
+  margin-left: 10px;
+  flex-wrap: wrap;
+}
+
+#female {
+  margin: 5px 10px;
+}
+
+#root>div>div>div>div.top>div>div.Search {
+  flex-grow: 1;
+}
+
+#root>div>div>div>form>div:nth-child(5)>div:nth-child(2)>div:nth-child(1) {
+  flex-direction: row;
+  margin-left: 0;
+}
+
+#root>div>div>div>form>div:nth-child(5)>div:nth-child(2)>div:nth-child(2) {
+  flex-direction: row;
+  margin-right: 0;
+}
+
+#root>div>div>div>div.top>div>div.Search>input[type=text] {
+  padding: 5px;
+  margin: 0px 20px;
+  width: 30%;
+
+}
+
+#root>div>div>div>div.top>div>div.Students {
+  margin-right: 20px;
+}
+
+
 
 .side label {
   margin: 4px 50px;
@@ -207,6 +302,7 @@ form div {
 
 }
 
+
 form div label {
   align-self: flex-start;
   padding: 0;
@@ -286,8 +382,14 @@ span {
 
 }
 
+.Table {
+  display: inline-block;
+}
+
+
 .Side {
-  margin-top: 15px;
+  margin-top: 50px;
+
 
 }
 
@@ -302,7 +404,7 @@ span {
   }
 
   table {
-    max-width: 550px;
+    min-width: 550px;
     flex-wrap: wrap;
   }
 
@@ -310,7 +412,6 @@ span {
     max-width: 200px;
     margin-left: 0;
     margin-right: 0;
-
 
   }
 
@@ -328,33 +429,53 @@ span {
 
 }
 
-@media screen and (max-width:740px) {
+@media screen and (max-width:840px) {
+  Body {
+    max-width: 840px;
+  }
+}
+
+@media screen and (max-width:750px) {
   #root>div>div>div>div.Body-content>div.Side {
-    order: 0;
-    max-width: 740px;
+    order: -1;
+    max-width: 750px;
     margin: 0 auto;
   }
 
+  .side {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #dddddd;
+
+  }
+
+  .side label {
+    margin: 10px 20px;
+
+  }
+
   #root>div>div>div>div.Body-content>div.Table {
-    order: -1;
-    max-width: 740px;
+    order: 0;
+    max-width: 750px;
     margin: 0 auto;
   }
 
   .Body-content {
-    max-width: 740px;
+    max-width: 750px;
   }
 }
 
 @media screen and (max-width:530px) {
   #root>div>div>div>div.Body-content>div.Side {
-    order: 0;
-    max-width: 5300px;
+    order: -1;
+    max-width: 530px;
     margin: 0 auto;
   }
 
+
+
   #root>div>div>div>div.Body-content>div.Table {
-    order: -1;
+    order: 0;
     max-width: 530px;
     margin: 0 auto;
   }
@@ -366,5 +487,36 @@ span {
   .Body {
     max-width: 540px;
     width: fit-content;
+  }
+}
+
+#root>div>div>h1 {
+  margin: 0 auto;
+}
+
+@media screen and (max-width:580px) {
+  .Body {
+    width: fit-content;
+  }
+}
+
+@media screen and (max-width:530px) {
+  .Body {
+    max-width: 530px;
+    width: fit-content;
+  }
+
+  #root>div>div>div>div.Body-content>div.Table>div>div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiTableContainer-root.css-zv3ubi-MuiPaper-root-MuiTableContainer-root {
+    max-width: 530px;
+  }
+
+  table {
+    min-width: 450px;
+  }
+}
+
+@media screen and (max-width:630px) {
+  table {
+    min-width: 400px;
   }
 }
