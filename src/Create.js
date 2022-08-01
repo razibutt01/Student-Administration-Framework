@@ -16,10 +16,14 @@ const Create = ({ createstu, setCreatestu }) => {
   const validationSchema = yup.object().shape({
     name: yup
       .string()
+      .matches(/^[aA-zZ\s]+$/, "only alphabets | no special characters")
       .max(25, "Name could not be 25 characters long")
       .min(4, "Name must contain at least 4 characters")
       .required("Name is required"),
-    Place_of_Birth: yup.string().required("Place of Birth is required"),
+    Place_of_Birth: yup
+      .string()
+      .matches(/^[aA-zZ\s]+$/, "only alphabets are allowed")
+      .required("Place of Birth is required"),
     Date_of_Birth: yup.string().required("Date of Birth is required"),
     sex: yup
       .string("Gender must be chcked")
@@ -239,7 +243,7 @@ const Create = ({ createstu, setCreatestu }) => {
           </div>
         </div>
         <Button variant="contained" color="primary" size="small" type="submit">
-          Submit
+          {isAddMode ? Submit : Save}
         </Button>
       </form>
     </div>

@@ -1,12 +1,14 @@
 {
   "Students": [
     {
-      "name": "Fasih-ul-Hassan butt",
+      "name": "Fasih ul Hassan butt",
       "Place_of_Birth": "Pakistani",
       "Date_of_Birth": "2005-05-06",
       "sex": "Male",
       "groups": [
-        "Maths"
+        "Maths",
+        "Chemistry",
+        "Computer"
       ],
       "id": 2
     },
