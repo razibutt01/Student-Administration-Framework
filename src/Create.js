@@ -243,7 +243,7 @@ const Create = ({ createstu, setCreatestu }) => {
           </div>
         </div>
         <Button variant="contained" color="primary" size="small" type="submit">
-          {isAddMode ? Submit : Save}
+          {isAddMode ? <p>Submit</p> : <p>Save</p>}
         </Button>
       </form>
     </div>
